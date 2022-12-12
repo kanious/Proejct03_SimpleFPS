@@ -1,0 +1,90 @@
+
+CreateObject( 'Object Name', 'Mesh Name'
+				, Position X, Position Y, Position Z
+				, Rotation X, Rotation Y, Rotation Z
+				, Scale X, Scale Y, Scale Z
+				, "Layer Name" )
+-- * Creates the new object in the scene
+--   Object Name : A key value to find the object for the target object of the command class
+--   Mesh Name : Mesh information of the object
+--   Layer Name : If you put 'bg', that object won't trigger the location based command
+
+
+RegistMasterCommand( 'Command Name' )
+-- * Regists the command that will be executed at first
+--   This command should have all subcommands except trigger commands
+
+
+CreateCommandGroup( 'Command Name', 'Command Type', Repeat Num)
+-- * Creates serial or parallel command group
+--   Command Name : Used to add subcommands
+--   Command Type : 'serial' or 'parallel'
+--   Repeat Num : If this is 0, it means repeat forever. It isn't used when the command is parallel
+
+
+AddCommandGroupToGroup( 'Src Command Name', 'Dest Command Name' )
+-- * Used when you need to put a command group in a command group
+--   Src Command Name : The command that will be saved
+--   Dest Command Name : Th command where the source command is saved
+
+
+AddCommandMoveTo( 'Command Name', 'Ease Type', 'Object Name'
+				, Position X, Position Y, Position Z
+				, Time, Ease In Value, Ease Out Value )
+-- * Add MoveTo command
+--   Command Name : The command to put the MoveTo command in
+--   Ease Type : Acceleration or deceleration type, 'ease_time' or 'ease_distance'
+--   Object Name : Target Object
+--   Time : Total time taken
+--   Ease In Value : Acceleration time or distance percent
+--   Ease Out Value : Deceleration time or distance percent
+
+
+AddCommandOrientTo( 'Command Name', 'Ease Type', 'Object Name'
+				, Rotation X, Rotation Y, Rotation Z
+				, RotationDir X, RotationDir Y, RotationDir Z
+				, Time, Ease In Value, Ease Out Value )
+-- * Add OrientTo command
+--   Rotation : Actual angle to rotate
+--   RotationDir : Direction of rotation
+
+
+AddCommandFollowCurve( 'Command Name', 'Ease Type', 'Object Name'
+				, Destination X, Destination Y, Destination Z
+				, ViaPosition X, ViaPosition Y, ViaPosition Z
+				, Time, Ease In Value, Ease Out Value
+				, boolean-Bezier )
+-- * Add FollowCurve command
+--   If you want to move along a bezier curve, input true to boolean_Bezier parameter
+
+
+AddCommandFollowObject( 'Command Name', 'Target Object Name', 'Dest Object Name'
+				, Max Speed, Following time, Deceleration distance, Stop distance )
+-- * Add FollowObject command
+--   Following time : Total time to follow
+--   Deceleration distance : Reference distance from which deceleration begins
+--   Stop distance : Reference distance to stop following
+
+
+AddTrigger( Position X, Position Y, Position Z, Radius
+				, 'On Command Name', 'Off Command Name' )
+-- * Add location based trigger command
+--   Position : Trigger position
+--   Radius : Trigger coverage
+--   On Command Name : The command to be executed when the object enters the trigger coverage
+--   Off Command Name : The command to be executed when the object leaves the trigger coverage
+
+
+AddCommandPlaySound( 'Command Name', 'Sound Tag' )
+-- * Special command 1 - playing sound
+--   This works without any special target object
+
+
+AddCommandRotSubPart( 'Command Name', 'Object Name', Time )
+-- * Special command 2 - rotating sub object
+--   The sub object orbits the main object during 'Time'
+
+
+AddCommandStay( 'Command Name', 'Object Name', Time )
+-- * A kind of MoveTo command
+--   Wait in place during 'Time'

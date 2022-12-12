@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PumpkinEngine", "PumpkinEngine\PumpkinEngine.vcxproj", "{BCFC01BC-436D-4222-BA86-7CA483118976}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FPSTraining", "FPSTraining\FPSTraining.vcxproj", "{EFEC5E21-1ED9-49D5-B5E7-1D218614EE55}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommandLua", "CommandLua\CommandLua.vcxproj", "{EFEC5E21-1ED9-49D5-B5E7-1D218614EE55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

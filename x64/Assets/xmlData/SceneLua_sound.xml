@@ -1,0 +1,26 @@
+<Sound_Data>
+	<Sound category="MaxChannelCount">
+		<Count>32</Count>
+	</Sound>
+	<Sound category="ChannelGroup">
+		<Tag>BG</Tag>
+	</Sound>
+	<Sound category="ChannelGroup">
+		<Tag>Environment</Tag>
+	</Sound>
+	<Sound category="ChannelGroup">
+		<Tag>Effect</Tag>
+	</Sound>
+	<Sound category="SoundFile">
+		<Tag>DoorOpen</Tag>
+		<Path>Assets\Sounds\door_open.mp3</Path>
+		<ChannelTag>Effect</ChannelTag>
+		<Loop>0</Loop>
+	</Sound>
+	<Sound category="SoundFile">
+		<Tag>DoorClose</Tag>
+		<Path>Assets\Sounds\door_close.mp3</Path>
+		<ChannelTag>Effect</ChannelTag>
+		<Loop>0</Loop>
+	</Sound>
+</Sound_Data>
