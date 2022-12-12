@@ -259,6 +259,13 @@ RESULT CMesh::Ready_VIBuffer(ModelType type, string filePath, string fileName, V
             vMax.z = vPos.z;
     }
     
+    if (type == xyz_normal_texUV_index && fileName == "pillar.ply")
+    {
+        vMin.x = -28.9368f;
+        vMin.z = -28.9368f;
+        vMax.x = 28.9368f;
+        vMax.z = 28.9368f;
+    }
     m_pBoundingBox = CBoundingBox::Create(vMin, vMax, "DebugBoxShader");
 
     m_iTriNum = triangleNum;
@@ -351,6 +358,7 @@ void CMesh::Ready_Qctree(_uint depth)
     {
         m_pOctree->AddTriangle(m_pTriangles[i], missed);
     }
+    cout << "Octree setup - Missed triangle: " << missed << endl;
 }
 
 CComponent* CMesh::Clone()

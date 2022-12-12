@@ -18,7 +18,6 @@ class ENGINE_API CGameObject : public CBase
 protected:
 	_wchar_t*							m_UUID;
 	std::string							m_meshName;
-	std::string							m_objName;
 	_uint								m_objTag;
 	_uint								m_layerTag;
 	_uint								m_sceneTag;
@@ -51,7 +50,6 @@ public:
 	void SetupGameObject(_uint sceneTag, _uint layerTag, _uint objTag);
 	const _wchar_t* GetUUID()				{ return m_UUID; }
 	const std::string GetMeshName()			{ return m_meshName; }
-	const std::string GetObjName()			{ return m_objName; }
 	const _uint GetObjectTag()				{ return m_objTag; }
 	const _uint GetLayerTag()				{ return m_layerTag; }
 	const _uint GetSceneTag()				{ return m_sceneTag; }
@@ -68,7 +66,6 @@ public:
 	glm::vec3 GetScale();
 	const glm::mat4x4* GetWorldMatrix();
 	void SetMeshName(std::string name);
-	void SetObjectName(std::string name);
 	void SetObjectTag(_uint objTag);
 	void SetLayerTag(_uint layerTag);
 	void SetSceneTag(_uint sceneTag);
@@ -80,12 +77,8 @@ public:
 	void SetWireFrame(_bool wire)			{ m_bWireFrame = wire; }
 	void SetPosition(glm::vec3 vPos);
 	void SetRotation(glm::vec3 vRot);
-	void SetRotationX(_float fAngle);
 	void SetRotationY(_float fAngle);
-	void SetRotationZ(_float fAngle);
 	void SetScale(glm::vec3 vScale);
-	void SetParentTransform(CTransform* pTransform);
-
 public:
 	void AttachComponent(std::string componentTag, CComponent* pInstance);
 	RESULT RemoveComponent(std::string componentTag);

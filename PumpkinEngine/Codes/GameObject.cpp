@@ -17,7 +17,6 @@ CGameObject::CGameObject()
 {
 	m_UUID = UUIDGenerate();
 	m_meshName = "";
-	m_objName = "";
 	m_objTag = 0;
 	m_layerTag = 0;
 	m_sceneTag = 0;
@@ -140,11 +139,6 @@ void CGameObject::SetMeshName(string name)
 	m_meshName = name;
 }
 
-void CGameObject::SetObjectName(std::string name)
-{
-	m_objName = name;
-}
-
 void CGameObject::SetObjectTag(_uint objTag)
 {
 	m_objTag = objTag;
@@ -186,14 +180,6 @@ void CGameObject::SetRotation(vec3 vRot)
 	m_pTransform->SetRotation(vRot);
 }
 
-void CGameObject::SetRotationX(_float fAngle)
-{
-	if (nullptr == m_pTransform)
-		return;
-
-	m_pTransform->SetRotationX(fAngle);
-}
-
 void CGameObject::SetRotationY(_float fAngle)
 {
 	if (nullptr == m_pTransform)
@@ -202,28 +188,12 @@ void CGameObject::SetRotationY(_float fAngle)
 	m_pTransform->SetRotationY(fAngle);
 }
 
-void CGameObject::SetRotationZ(_float fAngle)
-{
-	if (nullptr == m_pTransform)
-		return;
-
-	m_pTransform->SetRotationZ(fAngle);
-}
-
 void CGameObject::SetScale(glm::vec3 vScale)
 {
 	if (nullptr == m_pTransform)
 		return;
 
 	m_pTransform->SetScale(vScale);
-}
-
-void CGameObject::SetParentTransform(CTransform* pTransform)
-{
-	if (nullptr == m_pTransform)
-		return;
-
-	m_pTransform->SetParent(pTransform);
 }
 
 void CGameObject::AttachComponent(std::string componentTag, CComponent* pInstance)

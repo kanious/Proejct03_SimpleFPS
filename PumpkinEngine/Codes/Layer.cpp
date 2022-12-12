@@ -106,18 +106,6 @@ void CLayer::RemoveAllGameObject()
 	m_listGameObjects.clear();
 }
 
-CGameObject* CLayer::FindGameObjectByObjName(string objName)
-{
-	list<CGameObject*>::iterator iter;
-	for (iter = m_listGameObjects.begin(); iter != m_listGameObjects.end(); ++iter)
-	{
-		if (objName == (*iter)->GetObjName())
-			return (*iter);
-	}
-
-	return nullptr;
-}
-
 RESULT CLayer::Ready(_uint tag)
 {
 	m_tag = tag;

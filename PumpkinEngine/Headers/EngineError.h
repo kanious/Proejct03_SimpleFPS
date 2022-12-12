@@ -34,7 +34,6 @@ namespace Engine
 #define PK_FMOD_DSP_NOT_EXIST 28
 #define PK_LIGHT_CANNOT_FIND 29
 #define PK_LIGHT_EXIST 30
-#define PK_LUA_FILE_OPEN_ERROR 31
 
 	// OpenGL
 #define PK_WINDOW_CREATE_ERROR 100
